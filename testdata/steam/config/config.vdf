@@ -1,0 +1,38 @@
+"InstallConfigStore"
+{
+	"Software"
+	{
+		"Valve"
+		{
+			"Steam"
+			{
+				"CompatToolMapping"
+				{
+					"0"
+					{
+						"name"		"proton_experimental"
+						"config"		""
+						"priority"		"75"
+					}
+					"620"
+					{
+						"name"		"GE-Proton9-20"
+						"config"		""
+						"priority"		"250"
+					}
+					"570"
+					{
+						"name"		""
+						"config"		""
+						"priority"		"0"
+					}
+				}
+				"SomethingWhoctlDoesNotModel"		"keep me"
+			}
+		}
+	}
+	"Accessibility"
+	{
+		"DesktopUIScale"		"1.29999995231628418"
+	}
+}

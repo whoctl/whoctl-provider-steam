@@ -1,0 +1,11 @@
+"AppState"
+{
+	"appid"		"570"
+	"universe"		"1"
+	"name"		"Dota 2"
+	"StateFlags"		"1026"
+	"installdir"		"dota 2 beta"
+	"SizeOnDisk"		"25000000"
+	"buildid"		"999"
+	"AutoUpdateBehavior"		"1"
+}

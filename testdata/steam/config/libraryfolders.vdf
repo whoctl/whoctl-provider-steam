@@ -1,0 +1,26 @@
+"libraryfolders"
+{
+	"0"
+	{
+		"path"		"/fixture/steam"
+		"label"		""
+		"contentid"		"7313472139624271251"
+		"totalsize"		"0"
+		"apps"
+		{
+			"620"		"9000000"
+			"570"		"25000000"
+		}
+	}
+	"1"
+	{
+		"path"		"/fixture/games"
+		"label"		"Games SSD"
+		"contentid"		"1111111111111111111"
+		"totalsize"		"2000398934016"
+		"apps"
+		{
+			"440"		"30000000"
+		}
+	}
+}

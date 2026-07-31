@@ -1,0 +1,24 @@
+"users"
+{
+	"76561197960287930"
+	{
+		"AccountName"		"gaben"
+		"PersonaName"		"Gabe"
+		"RememberPassword"		"1"
+		"WantsOfflineMode"		"0"
+		"SkipOfflineModeWarning"		"0"
+		"AllowAutoLogin"		"1"
+		"MostRecent"		"1"
+		"AutoLogin"		"1"
+		"Timestamp"		"1785175232"
+	}
+	"76561197960287931"
+	{
+		"AccountName"		"alt"
+		"PersonaName"		"Alternate"
+		"RememberPassword"		"1"
+		"WantsOfflineMode"		"1"
+		"AutoLogin"		"0"
+		"Timestamp"		"1780279799"
+	}
+}

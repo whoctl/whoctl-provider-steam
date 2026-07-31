@@ -1,0 +1,29 @@
+"UserLocalConfigStore"
+{
+	"friends"
+	{
+		"PersonaName"		"Gabe"
+	}
+	"Software"
+	{
+		"Valve"
+		{
+			"Steam"
+			{
+				"apps"
+				{
+					"620"
+					{
+						"LastPlayed"		"1781044727"
+						"Playtime2wks"		"29"
+						"LaunchOptions"		"mangohud %command%"
+					}
+					"570"
+					{
+						"LastPlayed"		"1700000000"
+					}
+				}
+			}
+		}
+	}
+}

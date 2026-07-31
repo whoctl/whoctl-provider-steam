@@ -1,0 +1,22 @@
+"AppState"
+{
+	"appid"		"620"
+	"universe"		"1"
+	"name"		"Portal 2"
+	"StateFlags"		"4"
+	"installdir"		"Portal 2"
+	"LastUpdated"		"1780733589"
+	"LastPlayed"		"1781044727"
+	"SizeOnDisk"		"9000000"
+	"buildid"		"242358"
+	"AutoUpdateBehavior"		"0"
+	"AllowOtherDownloadsWhileRunning"		"0"
+	"InstalledDepots"
+	{
+		"621"
+		{
+			"manifest"		"8575178398231350170"
+			"size"		"9000000"
+		}
+	}
+}

@@ -1,0 +1,53 @@
+# The steam provider's local kinds. Everything here reads and writes Steam's own
+# KeyValues files, so it needs an installation and nothing else — no API key.
+#
+# Quit the Steam client first: it holds this configuration in memory and
+# rewrites the files when it exits, so whoctl refuses to write underneath it.
+apiVersion: steam.whoctl.io/v1alpha1
+kind: LaunchOption
+metadata:
+  # The app id, or an installed game's name.
+  name: "620"
+spec:
+  # %command% stands for the game's own executable, so a wrapper goes before it.
+  options: mangohud %command%
+---
+apiVersion: steam.whoctl.io/v1alpha1
+kind: CompatTool
+metadata:
+  # An app id, or "default" for the machine-wide Steam Play setting.
+  name: "620"
+spec:
+  # A Valve build, or the directory name of something in compatibilitytools.d.
+  tool: proton_experimental
+---
+apiVersion: steam.whoctl.io/v1alpha1
+kind: Shortcut
+metadata:
+  name: Lutris
+spec:
+  # Shortcuts are the one Steam resource with a full lifecycle: they are
+  # entirely the user's, so whoctl really does create and delete them.
+  exe: /usr/bin/lutris
+  startDir: /usr/bin/
+  tags: [Emulators]
+  allowOverlay: true
+---
+apiVersion: steam.whoctl.io/v1alpha1
+kind: App
+metadata:
+  name: "620"
+spec:
+  # Only the settings the appmanifest owns. whoctl never installs or uninstalls:
+  # that is an asynchronous download the client performs after a human confirms.
+  autoUpdate: onLaunch
+---
+apiVersion: steam.whoctl.io/v1alpha1
+kind: Account
+metadata:
+  # The login name. Steam signs exactly one account in automatically, so setting
+  # autoLogin here turns it off for the others.
+  name: gaben
+spec:
+  autoLogin: true
+  offlineMode: false
