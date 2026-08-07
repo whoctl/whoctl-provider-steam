@@ -49,6 +49,36 @@ export STEAM_API_KEY=…      # from steamcommunity.com/dev/apikey
 export STEAM_ID=…           # optional: defaults to whoever last signed in locally
 ```
 
+## Serving it
+
+A context is one Steam installation, on the machine the server is running on or
+in a tree it can open.
+
+```yaml
+- name: desktop
+  provider: steam
+  env:
+    # Where the installation is. Without it the provider walks the four
+    # standard locations under the server process's own $HOME, which on a
+    # server is not where anybody's Steam lives.
+    WHOCTL_STEAM_ROOT: /home/alice/.steam/steam
+    # The Web API half. In ${...} so the file can be committed and the key
+    # cannot — it is the account's key, not the machine's.
+    STEAM_API_KEY: ${STEAM_API_KEY}
+    STEAM_ID: "76561198000000000"
+```
+
+Nothing here is namespaced and nothing answers a pod view: an installed game is
+not something running, and saying it is would be the shim telling a client
+something it cannot check.
+
+The two halves fail independently and on purpose. A context with no
+`STEAM_API_KEY` still serves every local kind; the Web API kinds report the
+missing key rather than taking the context down with them.
+
+There is no remote mode: to serve the Steam on another machine, run a whoctl
+server there, or give this one a path it can read.
+
 ## Everything from the Web API is read-only
 
 Not a decision taken here — a property of the API. Valve publishes no endpoint
