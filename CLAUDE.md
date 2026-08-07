@@ -9,10 +9,21 @@ suite has a live install one directory away. `steamtest.Fixture` reads
 copies that tree into `t.TempDir()` first. Nothing in the suite may resolve the
 real Steam root, which is why detection is never exercised against `$HOME`.
 
-There is no container suite here, and that is not an oversight: with the fixture
-rule above, `go test ./...` is safe on the workstation. The delete rule in the
-workspace `CLAUDE.md` still applies, and `Shortcut` is the kind it is about —
-the one with a real delete, because shortcuts are entirely the user's.
+There is no container *suite* here, and that is not an oversight: with the
+fixture rule above, `go test ./...` is safe on the workstation. The delete rule
+in the workspace `CLAUDE.md` still applies, and `Shortcut` is the kind it is
+about — the one with a real delete, because shortcuts are entirely the user's.
+
+`make sandbox` gives the throwaway machine anyway, with the fixture mounted at
+`~/.steam/steam`. That mount point is the whole reason it exists: detection —
+walking the four standard install locations in the order Steam itself prefers
+them — is the one part of this provider the unit tests may never run, because
+the rule above forbids resolving a root against a real `$HOME`. In there, `$HOME`
+is a container's and detection is what answers.
+
+The Web API half is not in the sandbox. It needs somebody's real key and their
+real account, so those kinds report a missing key in there — which is what they
+do on any machine without one.
 
 ## Layout: two halves
 
