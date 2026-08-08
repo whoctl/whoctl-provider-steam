@@ -28,6 +28,15 @@ build:
 test:
 	@go test ./...
 
+## sandbox: a shell on a throwaway machine, with the fixture installation in place
+#
+# The fixture is mounted where the provider's own detection finds it, which is
+# the code path a workstation never runs: there, --root or WHOCTL_STEAM_ROOT
+# always answers first.
+.PHONY: sandbox
+sandbox:
+	@scripts/sandbox.sh $(ARGS)
+
 ## docs: write the documentation bundle a release publishes
 .PHONY: docs
 docs:
@@ -44,6 +53,14 @@ fmt:
 .PHONY: clean
 clean:
 	@rm -rf bin
+
+## standalone: build and test without the workspace, the way a consumer does
+#
+# The check lives in whoctl, beside the container harness and for the same
+# reason: it is about how a module is consumed, not about what this one manages.
+.PHONY: standalone
+standalone:
+	@../whoctl/scripts/standalone.sh
 
 ## help: list the available targets
 .PHONY: help
